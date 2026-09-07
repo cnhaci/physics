@@ -1,1 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Numerical Analysis | Physics Projects</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: #0d1117;
+            color: #e6edf3;
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 50px 25px;
+        }
+
+        .back {
+            display: inline-block;
+            margin-bottom: 40px;
+            color: #58a6ff;
+            text-decoration: none;
+        }
+
+        .back:hover {
+            text-decoration: underline;
+        }
+
+        .project-number {
+            color: #8b949e;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        h1 {
+            font-size: 46px;
+            margin: 10px 0;
+        }
+
+        .subtitle {
+            color: #8b949e;
+            font-size: 19px;
+            margin-bottom: 30px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 50px;
+        }
+
+        .tag {
+            background: #161b22;
+            border: 1px solid #30363d;
+            padding: 6px 13px;
+            border-radius: 20px;
+            color: #58a6ff;
+            font-size: 14px;
+        }
+
+        section {
+            margin-bottom: 50px;
+        }
+
+        h2 {
+            font-size: 28px;
+            margin-bottom: 18px;
+            border-bottom: 1px solid #30363d;
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            margin-top: 25px;
+            margin-bottom: 10px;
+            color: #58a6ff;
+        }
+
+        p {
+            color: #c9d1d9;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            margin-left: 25px;
+            color: #c9d1d9;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .highlight {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 25px 0;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .stat {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .stat strong {
+            display: block;
+            font-size: 24px;
+            color: #58a6ff;
+        }
+
+        .stat span {
+            color: #8b949e;
+            font-size: 14px;
+        }
+
+        .code-box {
+            background: #010409;
+            border: 1px solid #30363d;
+            border-radius: 10px;
+            padding: 20px;
+            overflow-x: auto;
+            font-family: monospace;
+            color: #c9d1d9;
+        }
+
+        .result {
+            border-left: 3px solid #58a6ff;
+            padding-left: 20px;
+            margin: 20px 0;
+        }
+
+        footer {
+            border-top: 1px solid #30363d;
+            padding-top: 25px;
+            color: #8b949e;
+            font-size: 14px;
+        }
+
+        a {
+            color: #58a6ff;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 34px;
+            }
+
+            .container {
+                padding: 30px 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <a class="back" href="../index.html">← Back to Projects</a>
+
+    <div class="project-number">Project 02</div>
+
+    <h1>Numerical Analysis of Weather Data</h1>
+
+    <p class="subtitle">
+        Analysis of real-world NOAA weather data using Python,
+        numerical methods, statistical analysis, and data visualization.
+    </p>
+
+    <div class="tags">
+        <span class="tag">Python</span>
+        <span class="tag">Pandas</span>
+        <span class="tag">NumPy</span>
+        <span class="tag">Matplotlib</span>
+        <span class="tag">Seaborn</span>
+        <span class="tag">Interpolation</span>
+        <span class="tag">Data Analysis</span>
+    </div>
+
+
+    <section>
+        <h2>Overview</h2>
+
+        <p>
+            This project was developed for the Numerical Analysis course
+            at Hacettepe University. The study focuses on the analysis of
+            real-world hourly weather observations collected from the
+            NOAA Local Climatological Data (LCD) dataset for the year 2024.
+        </p>
+
+        <p>
+            Two geographically and climatically different locations were
+            selected: Honolulu, Hawaii and Anchorage, Alaska. The main
+            objective was to apply numerical and data analysis techniques
+            to investigate weather patterns, relationships between
+            variables, and missing data.
+        </p>
+    </section>
+
+
+    <section>
+        <h2>Dataset</h2>
+
+        <div class="highlight">
+            <h3>Weather Stations</h3>
+
+            <ul>
+                <li>Honolulu International Airport, Hawaii</li>
+                <li>Ted Stevens Anchorage International Airport, Alaska</li>
+            </ul>
+
+            <h3>Analyzed Variables</h3>
+
+            <ul>
+                <li>Hourly Dry Bulb Temperature</li>
+                <li>Relative Humidity</li>
+                <li>Wind Speed</li>
+                <li>Precipitation</li>
+                <li>Sea Level Pressure</li>
+            </ul>
+        </div>
+    </section>
+
+
+    <section>
+        <h2>Methodology</h2>
+
+        <h3>1. Data Preprocessing</h3>
+
+        <p>
+            The raw NOAA datasets were loaded and processed using Pandas.
+            Relevant meteorological variables were selected and numerical
+            columns were converted into appropriate numerical formats.
+        </p>
+
+        <h3>2. Time-Based Analysis</h3>
+
+        <p>
+            The DATE column was converted into datetime format. Additional
+            variables such as month, hour, and station were created to
+            enable time-based and station-based comparisons.
+        </p>
+
+        <h3>3. Missing Data and Interpolation</h3>
+
+        <p>
+            Missing numerical observations were handled using linear
+            interpolation. The method estimates missing values from
+            neighboring observations in the time-ordered dataset.
+        </p>
+
+        <div class="code-box">
+            data["Temperature"] =
+            data["Temperature"].interpolate(method="linear")
+        </div>
+
+        <h3>4. Data Visualization</h3>
+
+        <p>
+            Several visualization techniques were used to investigate
+            the structure of the dataset:
+        </p>
+
+        <ul>
+            <li>Monthly average temperature plots</li>
+            <li>Temperature boxplots</li>
+            <li>Temperature histograms</li>
+            <li>Humidity-temperature scatter plots</li>
+            <li>Correlation heatmaps</li>
+        </ul>
+    </section>
+
+
+    <section>
+        <h2>Key Results</h2>
+
+        <div class="stats">
+            <div class="stat">
+                <strong>55.98 °F</strong>
+                <span>Average Temperature</span>
+            </div>
+
+            <div class="stat">
+                <strong>71.99%</strong>
+                <span>Average Relative Humidity</span>
+            </div>
+
+            <div class="stat">
+                <strong>8.58 mph</strong>
+                <span>Average Wind Speed</span>
+            </div>
+
+            <div class="stat">
+                <strong>−20 to 90 °F</strong>
+                <span>Temperature Range</span>
+            </div>
+        </div>
+
+        <div class="result">
+            <p>
+                Honolulu showed relatively stable temperatures throughout
+                the year, with most observations concentrated around the
+                upper 70s °F.
+            </p>
+        </div>
+
+        <div class="result">
+            <p>
+                Anchorage showed strong seasonal variation, with very cold
+                winter temperatures and significantly warmer summer
+                conditions.
+            </p>
+        </div>
+
+        <div class="result">
+            <p>
+                The comparison demonstrated that temperature was one of
+                the strongest factors distinguishing the two locations.
+            </p>
+        </div>
+    </section>
+
+
+    <section>
+        <h2>Interpolation Analysis</h2>
+
+        <p>
+            Linear interpolation was used to estimate missing temperature
+            observations from neighboring measurements. The interpolated
+            values closely followed the original temperature series,
+            demonstrating that the method was effective for filling
+            short gaps in the time series.
+        </p>
+
+        <div class="highlight">
+            <h3>Original vs. Interpolated Temperature</h3>
+
+            <p>
+                The graph compares the original temperature observations
+                with the values obtained after interpolation.
+            </p>
+
+            <p>
+                <strong>Note:</strong> Linear interpolation is more
+                appropriate for continuous variables such as temperature.
+                Its application to precipitation should be interpreted
+                with caution because precipitation can change abruptly.
+            </p>
+        </div>
+    </section>
+
+
+    <section>
+        <h2>Discussion & Conclusion</h2>
+
+        <p>
+            This project demonstrated how numerical analysis and
+            computational tools can be applied to real-world scientific
+            datasets. Python libraries such as Pandas, NumPy, Matplotlib,
+            and Seaborn were used throughout the analysis.
+        </p>
+
+        <p>
+            The comparison between Honolulu and Anchorage revealed
+            substantial climatic differences. Honolulu displayed stable
+            warm conditions, whereas Anchorage exhibited much stronger
+            seasonal variability.
+        </p>
+
+        <p>
+            The interpolation analysis showed that linear interpolation
+            can effectively reconstruct missing values in continuous
+            weather variables such as temperature. However, the method
+            should be applied carefully to variables such as precipitation
+            where abrupt changes are common.
+        </p>
+
+        <p>
+            Overall, the project combined data cleaning, numerical
+            interpolation, statistical analysis, visualization, and
+            scientific interpretation into a single workflow.
+        </p>
+    </section>
+
+
+    <section>
+        <h2>Tools & Technologies</h2>
+
+        <div class="highlight">
+            <ul>
+                <li><strong>Python</strong> — Main programming language</li>
+                <li><strong>Pandas</strong> — Data processing and analysis</li>
+                <li><strong>NumPy</strong> — Numerical computation</li>
+                <li><strong>Matplotlib</strong> — Data visualization</li>
+                <li><strong>Seaborn</strong> — Statistical visualization</li>
+                <li><strong>Google Colab</strong> — Development environment</li>
+            </ul>
+        </div>
+    </section>
+
+
+    <section>
+        <h2>References</h2>
+
+        <ul>
+            <li>
+                NOAA — Local Climatological Data (LCD)
+            </li>
+            <li>
+                National Centers for Environmental Information (NCEI)
+            </li>
+            <li>
+                Numerical Analysis Course Notes,
+                Department of Physics Engineering,
+                Hacettepe University
+            </li>
+        </ul>
+    </section>
+
+
+    <footer>
+        Numerical Analysis Project · Hacettepe University · Physics Engineering
+    </footer>
+
+</div>
+
+</body>
+</html>
