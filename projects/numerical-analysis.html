@@ -449,7 +449,171 @@
             </p>
         </div>
     </section>
+<section>
+    <h2>Python Source Code</h2>
 
+    <p>
+        All data processing, statistical analysis, visualization,
+        and interpolation procedures used in this project were
+        implemented in Python. The complete source code is provided
+        below to make the analysis reproducible and openly accessible.
+    </p>
+
+    <div class="highlight">
+        <h3>Open-Source Implementation</h3>
+
+        <p>
+            The complete Python implementation is available in the
+            project's GitHub repository.
+        </p>
+
+        <p>
+            <a href="weather_analysis.py">
+                View weather_analysis.py →
+            </a>
+        </p>
+    </div>
+
+    <details>
+        <summary>Figure 1 — Monthly Average Temperature</summary>
+
+        <pre><code>monthly_temp = (
+    weather.groupby(["Month", "Station"])
+    ["HourlyDryBulbTemperature"]
+    .mean()
+    .reset_index()
+)
+
+plt.figure(figsize=(12, 6))
+
+sns.lineplot(
+    data=monthly_temp,
+    x="Month",
+    y="HourlyDryBulbTemperature",
+    hue="Station",
+    marker="o"
+)
+
+plt.title("Monthly Average Temperature")
+plt.xlabel("Month")
+plt.ylabel("Temperature")
+plt.show()</code></pre>
+    </details>
+
+    <details>
+        <summary>Figure 2 — Temperature Comparison</summary>
+
+        <pre><code>plt.figure(figsize=(10, 6))
+
+sns.boxplot(
+    data=weather,
+    x="Station",
+    y="HourlyDryBulbTemperature"
+)
+
+plt.title("Temperature Comparison Between Stations")
+plt.xlabel("Station")
+plt.ylabel("Temperature")
+plt.show()</code></pre>
+    </details>
+
+    <details>
+        <summary>Figure 3 — Temperature Distribution</summary>
+
+        <pre><code>plt.figure(figsize=(10, 6))
+
+sns.histplot(
+    data=weather,
+    x="HourlyDryBulbTemperature",
+    hue="Station",
+    kde=True,
+    bins=30
+)
+
+plt.title("Temperature Distribution")
+plt.xlabel("Temperature")
+plt.ylabel("Frequency")
+plt.show()</code></pre>
+    </details>
+
+    <details>
+        <summary>Figure 4 — Humidity vs Temperature</summary>
+
+        <pre><code>plt.figure(figsize=(10, 6))
+
+sns.scatterplot(
+    data=weather,
+    x="HourlyRelativeHumidity",
+    y="HourlyDryBulbTemperature",
+    hue="Station",
+    alpha=0.5
+)
+
+plt.title("Humidity vs Temperature")
+plt.xlabel("Relative Humidity")
+plt.ylabel("Temperature")
+plt.show()</code></pre>
+    </details>
+
+    <details>
+        <summary>Figure 5 — Correlation Heatmap</summary>
+
+        <pre><code>correlation = weather[NUMERIC_COLUMNS].corr()
+
+plt.figure(figsize=(8, 6))
+
+sns.heatmap(
+    correlation,
+    annot=True,
+    cmap="coolwarm"
+)
+
+plt.title("Correlation Heatmap")
+plt.show()</code></pre>
+    </details>
+
+    <details>
+        <summary>Figure 6 — Original vs Interpolated Temperature</summary>
+
+        <pre><code>original_temperature = (
+    weather["HourlyDryBulbTemperature"].copy()
+)
+
+interpolated_weather = weather.copy()
+
+interpolated_weather[NUMERIC_COLUMNS] = (
+    interpolated_weather
+    .groupby("Station")[NUMERIC_COLUMNS]
+    .transform(
+        lambda group:
+        group.interpolate(method="linear")
+    )
+)
+
+plt.figure(figsize=(12, 6))
+
+plt.plot(
+    original_temperature.iloc[:500],
+    label="Original",
+    alpha=0.7
+)
+
+plt.plot(
+    interpolated_weather[
+        "HourlyDryBulbTemperature"
+    ].iloc[:500],
+    label="Interpolated",
+    linestyle="--"
+)
+
+plt.title("Original vs Interpolated Temperature Data")
+plt.xlabel("Index")
+plt.ylabel("Temperature")
+plt.legend()
+plt.show()</code></pre>
+    </details>
+
+</section>
 
     <section>
         <h2>Interpolation Analysis</h2>
