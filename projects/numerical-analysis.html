@@ -4,97 +4,84 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Numerical Analysis | Physics Projects</title>
+    <title>Numerical Analysis of Weather Data</title>
 
     <style>
         * {
             box-sizing: border-box;
-            margin: 0;
-            padding: 0;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
             background: #0d1117;
             color: #e6edf3;
             line-height: 1.7;
         }
 
         .container {
-            max-width: 1000px;
+            width: 90%;
+            max-width: 1100px;
             margin: auto;
-            padding: 50px 25px;
+            padding: 50px 0;
         }
 
-        .back {
-            display: inline-block;
-            margin-bottom: 40px;
-            color: #58a6ff;
-            text-decoration: none;
+        .hero {
+            text-align: center;
+            padding: 50px 20px;
+            border-bottom: 1px solid #30363d;
         }
 
-        .back:hover {
-            text-decoration: underline;
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+            color: #ffffff;
         }
 
-        .project-number {
+        .hero p {
             color: #8b949e;
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        h1 {
-            font-size: 46px;
-            margin: 10px 0;
-        }
-
-        .subtitle {
-            color: #8b949e;
-            font-size: 19px;
-            margin-bottom: 30px;
+            font-size: 18px;
+            max-width: 800px;
+            margin: auto;
         }
 
         .tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 50px;
+            margin-top: 25px;
         }
 
         .tag {
-            background: #161b22;
+            display: inline-block;
+            background: #21262d;
             border: 1px solid #30363d;
-            padding: 6px 13px;
-            border-radius: 20px;
             color: #58a6ff;
-            font-size: 14px;
+            padding: 6px 12px;
+            margin: 4px;
+            border-radius: 20px;
+            font-size: 13px;
         }
 
         section {
-            margin-bottom: 50px;
+            margin-top: 55px;
         }
 
         h2 {
             font-size: 28px;
-            margin-bottom: 18px;
+            color: #ffffff;
             border-bottom: 1px solid #30363d;
             padding-bottom: 10px;
+            margin-bottom: 25px;
         }
 
         h3 {
-            margin-top: 25px;
-            margin-bottom: 10px;
-            color: #58a6ff;
+            color: #ffffff;
+            margin-top: 35px;
         }
 
         p {
             color: #c9d1d9;
-            margin-bottom: 15px;
         }
 
         ul {
-            margin-left: 25px;
             color: #c9d1d9;
         }
 
@@ -104,71 +91,145 @@
 
         .highlight {
             background: #161b22;
+            border-left: 4px solid #58a6ff;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 6px;
+        }
+
+        .highlight strong {
+            color: #ffffff;
+        }
+
+        .figure {
+            margin: 35px 0;
+            text-align: center;
+        }
+
+        .figure img {
+            width: 100%;
+            max-width: 900px;
+            border-radius: 8px;
             border: 1px solid #30363d;
-            border-radius: 12px;
+        }
+
+        .caption {
+            color: #8b949e;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .code-section {
+            margin-top: 25px;
+        }
+
+        details {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            margin: 15px 0;
+            overflow: hidden;
+        }
+
+        summary {
+            cursor: pointer;
+            padding: 15px 20px;
+            font-weight: bold;
+            color: #58a6ff;
+        }
+
+        summary:hover {
+            background: #21262d;
+        }
+
+        pre {
+            margin: 0;
+            padding: 20px;
+            overflow-x: auto;
+            background: #0d1117;
+            border-top: 1px solid #30363d;
+        }
+
+        code {
+            font-family: Consolas, Monaco, monospace;
+            font-size: 14px;
+            color: #c9d1d9;
+        }
+
+        .source-box {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 8px;
             padding: 25px;
             margin: 25px 0;
         }
 
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 15px;
-            margin-top: 25px;
+        .source-box h3 {
+            margin-top: 0;
         }
 
-        .stat {
-            background: #161b22;
-            border: 1px solid #30363d;
-            border-radius: 10px;
-            padding: 20px;
+        .source-link {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 18px;
+            background: #238636;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
         }
 
-        .stat strong {
-            display: block;
-            font-size: 24px;
+        .source-link:hover {
+            background: #2ea043;
+        }
+
+        .reference-list a {
             color: #58a6ff;
+            text-decoration: none;
         }
 
-        .stat span {
-            color: #8b949e;
-            font-size: 14px;
+        .reference-list a:hover {
+            text-decoration: underline;
         }
 
-        .code-box {
-            background: #010409;
-            border: 1px solid #30363d;
-            border-radius: 10px;
-            padding: 20px;
-            overflow-x: auto;
-            font-family: monospace;
-            color: #c9d1d9;
-        }
-
-        .result {
-            border-left: 3px solid #58a6ff;
-            padding-left: 20px;
-            margin: 20px 0;
-        }
-
-        footer {
+        .back {
+            text-align: center;
+            margin-top: 70px;
+            padding-top: 30px;
             border-top: 1px solid #30363d;
-            padding-top: 25px;
-            color: #8b949e;
-            font-size: 14px;
         }
 
-        a {
+        .back a {
             color: #58a6ff;
+            text-decoration: none;
+            font-weight: bold;
         }
 
-        @media (max-width: 600px) {
-            h1 {
-                font-size: 34px;
-            }
+        .back a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 700px) {
 
             .container {
-                padding: 30px 18px;
+                width: 92%;
+                padding: 30px 0;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+
+            pre {
+                font-size: 12px;
             }
         }
     </style>
@@ -178,308 +239,622 @@
 
 <div class="container">
 
-    <a class="back" href="../index.html">← Back to Projects</a>
+    <!-- ===================================================== -->
+    <!-- 1. HERO -->
+    <!-- ===================================================== -->
 
-    <div class="project-number">Project 02</div>
+    <div class="hero">
 
-    <h1>Numerical Analysis of Weather Data</h1>
+        <h1>Numerical Analysis of Weather Data</h1>
 
-    <p class="subtitle">
-        Analysis of real-world NOAA weather data using Python,
-        numerical methods, statistical analysis, and data visualization.
-    </p>
+        <p>
+            Analysis of real-world NOAA weather data using Python,
+            numerical methods, statistical analysis, interpolation,
+            and data visualization.
+        </p>
 
-    <div class="tags">
-        <span class="tag">Python</span>
-        <span class="tag">Pandas</span>
-        <span class="tag">NumPy</span>
-        <span class="tag">Matplotlib</span>
-        <span class="tag">Seaborn</span>
-        <span class="tag">Interpolation</span>
-        <span class="tag">Data Analysis</span>
+        <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">Pandas</span>
+            <span class="tag">NumPy</span>
+            <span class="tag">Matplotlib</span>
+            <span class="tag">Seaborn</span>
+            <span class="tag">Interpolation</span>
+            <span class="tag">Statistics</span>
+            <span class="tag">Data Analysis</span>
+        </div>
+
     </div>
 
 
+    <!-- ===================================================== -->
+    <!-- 2. OVERVIEW -->
+    <!-- ===================================================== -->
+
     <section>
-        <h2>Overview</h2>
+
+        <h2>2. Overview</h2>
 
         <p>
-            This project was developed for the Numerical Analysis course
-            at Hacettepe University. The study focuses on the analysis of
-            real-world hourly weather observations collected from the
-            NOAA Local Climatological Data (LCD) dataset for the year 2024.
+            This project analyzes real-world meteorological data collected
+            by the National Oceanic and Atmospheric Administration (NOAA).
+            The analysis focuses on hourly weather observations from two
+            geographically different locations during 2024.
         </p>
 
         <p>
-            Two geographically and climatically different locations were
-            selected: Honolulu, Hawaii, and Anchorage, Alaska. The main
-            objective was to apply numerical and data analysis techniques
-            to investigate weather patterns, relationships between
-            variables, and missing data.
+            The main objective was to apply numerical analysis techniques,
+            statistical methods, data cleaning, interpolation, and
+            visualization to a real scientific dataset.
         </p>
-    </section>
-
-
-    <section>
-        <h2>Dataset</h2>
 
         <div class="highlight">
-            <h3>Weather Stations</h3>
 
-            <ul>
-                <li>Honolulu International Airport, Hawaii</li>
-                <li>Ted Stevens Anchorage International Airport, Alaska</li>
-            </ul>
+            <strong>Project Objective</strong>
 
-            <h3>Analyzed Variables</h3>
+            <p>
+                To investigate temperature, humidity, wind speed,
+                precipitation, and sea level pressure using Python-based
+                numerical and statistical analysis techniques.
+            </p>
 
-            <ul>
-                <li>Hourly Dry Bulb Temperature</li>
-                <li>Relative Humidity</li>
-                <li>Wind Speed</li>
-                <li>Precipitation</li>
-                <li>Sea Level Pressure</li>
-            </ul>
         </div>
+
     </section>
 
 
+    <!-- ===================================================== -->
+    <!-- 3. DATASET -->
+    <!-- ===================================================== -->
+
     <section>
-        <h2>Methodology</h2>
 
-        <h3>1. Data Preprocessing</h3>
-
-        <p>
-            The raw NOAA datasets were loaded and processed using Pandas.
-            Relevant meteorological variables were selected and numerical
-            columns were converted into appropriate numerical formats.
-        </p>
-
-        <h3>2. Time-Based Analysis</h3>
+        <h2>3. Dataset</h2>
 
         <p>
-            The DATE column was converted into datetime format. Additional
-            variables such as month, hour, and station were created to
-            enable time-based and station-based comparisons.
-        </p>
-
-        <h3>3. Missing Data and Interpolation</h3>
-
-        <p>
-            Missing numerical observations were handled using linear
-            interpolation. The method estimates missing values from
-            neighboring observations in the time-ordered dataset.
-        </p>
-
-        <div class="code-box">
-            data["Temperature"] =
-            data["Temperature"].interpolate(method="linear")
-        </div>
-
-        <h3>4. Data Visualization</h3>
-
-        <p>
-            Several visualization techniques were used to investigate
-            the structure of the dataset:
+            The dataset consists of 2024 NOAA Local Climatological Data
+            collected from two airport weather stations:
         </p>
 
         <ul>
-            <li>Monthly average temperature plots</li>
-            <li>Temperature boxplots</li>
-            <li>Temperature histograms</li>
-            <li>Humidity-temperature scatter plots</li>
-            <li>Correlation heatmaps</li>
+
+            <li>
+                Honolulu International Airport, Hawaii
+            </li>
+
+            <li>
+                Ted Stevens Anchorage International Airport, Alaska
+            </li>
+
         </ul>
+
+        <h3>Selected Variables</h3>
+
+        <ul>
+
+            <li>Hourly Dry Bulb Temperature</li>
+
+            <li>Hourly Relative Humidity</li>
+
+            <li>Hourly Wind Speed</li>
+
+            <li>Hourly Precipitation</li>
+
+            <li>Hourly Sea Level Pressure</li>
+
+        </ul>
+
+        <div class="highlight">
+
+            <strong>Data Period:</strong>
+            January 2024 – December 2024
+
+            <br><br>
+
+            <strong>Locations:</strong>
+            Honolulu and Anchorage
+
+        </div>
+
     </section>
-<section>
-    <h2>Data Visualization</h2>
-
-    <p>
-        Several visualization techniques were used to compare the
-        climatic characteristics of Honolulu and Anchorage and to
-        examine relationships between the selected weather variables.
-    </p>
-
-    <!-- Figure 1 -->
-    <div class="figure">
-        <img src="monthly-average-temperature.png"
-             alt="Monthly Average Temperature in Honolulu and Anchorage">
-        <p class="caption">
-            Figure 1. Monthly average temperature comparison between Honolulu and Anchorage.
-        </p>
-    </div>
-
-    <div class="highlight">
-        <h3>Monthly Temperature Trends</h3>
-        <p>
-            Honolulu remains warm throughout the year with relatively
-            small seasonal changes. In contrast, Anchorage shows strong
-            seasonal variation, with very cold winter temperatures and
-            substantially warmer summer temperatures.
-        </p>
-    </div>
 
 
-    <!-- Figure 2 -->
-    <div class="figure">
-        <img src="temperature-comparison.png"
-             alt="Temperature Comparison Between Honolulu and Anchorage">
-        <p class="caption">
-            Figure 2. Temperature distribution comparison between the two stations.
-        </p>
-    </div>
-
-    <div class="highlight">
-        <h3>Temperature Comparison</h3>
-        <p>
-            The boxplot shows that Honolulu has a relatively narrow
-            temperature distribution centered around the upper 70s °F.
-            Anchorage has a much wider distribution, ranging from
-            temperatures below 0°F to above 70°F.
-        </p>
-    </div>
-
-
-    <!-- Figure 3 -->
-    <div class="figure">
-        <img src="temperature-distribution.png"
-             alt="Temperature Distribution for Honolulu and Anchorage">
-        <p class="caption">
-            Figure 3. Temperature distribution of Honolulu and Anchorage observations.
-        </p>
-    </div>
-
-    <div class="highlight">
-        <h3>Temperature Distribution</h3>
-        <p>
-            Honolulu temperatures are strongly concentrated around
-            approximately 75–80°F. Anchorage has a much broader
-            distribution, reflecting its stronger seasonal variability.
-        </p>
-    </div>
-
-
-    <!-- Figure 4 -->
-    <div class="figure">
-        <img src="humidity-vs-temperature.png"
-             alt="Humidity versus Temperature for Honolulu and Anchorage">
-        <p class="caption">
-            Figure 4. Relationship between relative humidity and temperature.
-        </p>
-    </div>
-
-    <div class="highlight">
-        <h3>Humidity vs. Temperature</h3>
-        <p>
-            The scatter plot shows a negative relationship between
-            relative humidity and temperature. Honolulu observations
-            remain concentrated at relatively high temperatures,
-            whereas Anchorage covers a much wider temperature range.
-        </p>
-    </div>
-
-
-    <!-- Figure 5 -->
-    <div class="figure">
-        <img src="correlation-heatmap.png"
-             alt="Correlation Heatmap of Weather Variables">
-        <p class="caption">
-            Figure 5. Correlation matrix of the selected weather variables.
-        </p>
-    </div>
-
-    <div class="highlight">
-        <h3>Correlation Analysis</h3>
-        <p>
-            The correlation heatmap indicates a negative relationship
-            between relative humidity and temperature, while humidity
-            also shows a negative relationship with wind speed.
-            Precipitation has relatively weak correlations with the
-            other variables.
-        </p>
-    </div>
-
-</section>
+    <!-- ===================================================== -->
+    <!-- 4. METHODOLOGY -->
+    <!-- ===================================================== -->
 
     <section>
-        <h2>Key Results</h2>
 
-        <div class="stats">
-            <div class="stat">
-                <strong>55.98 °F</strong>
-                <span>Average Temperature</span>
-            </div>
-
-            <div class="stat">
-                <strong>71.99%</strong>
-                <span>Average Relative Humidity</span>
-            </div>
-
-            <div class="stat">
-                <strong>8.58 mph</strong>
-                <span>Average Wind Speed</span>
-            </div>
-
-            <div class="stat">
-                <strong>−20 to 90 °F</strong>
-                <span>Temperature Range</span>
-            </div>
-        </div>
-
-        <div class="result">
-            <p>
-                Honolulu showed relatively stable temperatures throughout
-                the year, with most observations concentrated around the
-                upper 70s °F.
-            </p>
-        </div>
-
-        <div class="result">
-            <p>
-                Anchorage showed strong seasonal variation, with very cold
-                winter temperatures and significantly warmer summer
-                conditions.
-            </p>
-        </div>
-
-        <div class="result">
-            <p>
-                The comparison demonstrated that temperature was one of
-                the strongest factors distinguishing the two locations.
-            </p>
-        </div>
-    </section>
-<section>
-    <h2>Python Source Code</h2>
-
-    <p>
-        All data processing, statistical analysis, visualization,
-        and interpolation procedures used in this project were
-        implemented in Python. The complete source code is provided
-        below to make the analysis reproducible and openly accessible.
-    </p>
-
-    <div class="highlight">
-        <h3>Open-Source Implementation</h3>
+        <h2>4. Methodology</h2>
 
         <p>
-            The complete Python implementation is available in the
-            project's GitHub repository.
+            The analysis followed a structured data-processing workflow.
+            The raw NOAA data were loaded into Python, cleaned,
+            transformed, analyzed, and visualized.
         </p>
 
+        <h3>Step 1 — Data Loading</h3>
+
         <p>
-            <a href="weather_analysis.py">
+            The NOAA CSV files were loaded using the Pandas library.
+            Column names were cleaned to remove unnecessary whitespace.
+        </p>
+
+        <h3>Step 2 — Variable Selection</h3>
+
+        <p>
+            Only the variables required for the numerical analysis were
+            selected from the original datasets.
+        </p>
+
+        <h3>Step 3 — Data Preparation</h3>
+
+        <p>
+            The DATE column was converted into datetime format.
+            Additional Month and Hour variables were generated.
+            A Station variable was also added to distinguish Honolulu
+            from Anchorage.
+        </p>
+
+        <h3>Step 4 — Numerical Conversion</h3>
+
+        <p>
+            Numerical weather variables were converted using
+            <code>pd.to_numeric()</code>.
+            Invalid entries were treated as missing values.
+        </p>
+
+        <h3>Step 5 — Missing Data</h3>
+
+        <p>
+            Missing numerical values were handled using linear
+            interpolation.
+        </p>
+
+        <h3>Step 6 — Statistical Analysis</h3>
+
+        <p>
+            Monthly averages, distributions, relationships between
+            variables, and correlation coefficients were investigated.
+        </p>
+
+        <h3>Step 7 — Visualization</h3>
+
+        <p>
+            Matplotlib and Seaborn were used to generate graphs for
+            interpreting the numerical results.
+        </p>
+
+    </section>
+
+
+    <!-- ===================================================== -->
+    <!-- 5. KEY RESULTS -->
+    <!-- ===================================================== -->
+
+    <section>
+
+        <h2>5. Key Results</h2>
+
+        <p>
+            The combined dataset provided a clear contrast between the
+            climatic characteristics of Honolulu and Anchorage.
+        </p>
+
+        <ul>
+
+            <li>
+                The combined average temperature was approximately
+                <strong>55.98 °F</strong>.
+            </li>
+
+            <li>
+                The combined average relative humidity was approximately
+                <strong>71.99%</strong>.
+            </li>
+
+            <li>
+                The average wind speed was approximately
+                <strong>8.58 mph</strong>.
+            </li>
+
+            <li>
+                The average precipitation value was approximately
+                <strong>0.0039 inches</strong>.
+            </li>
+
+            <li>
+                The average sea level pressure was approximately
+                <strong>29.89 inHg</strong>.
+            </li>
+
+            <li>
+                The minimum recorded temperature was approximately
+                <strong>-20 °F</strong>.
+            </li>
+
+            <li>
+                The maximum recorded temperature was approximately
+                <strong>90 °F</strong>.
+            </li>
+
+        </ul>
+
+        <div class="highlight">
+
+            <strong>Main Observation</strong>
+
+            <p>
+                Honolulu showed relatively stable warm temperatures
+                throughout the year, while Anchorage displayed strong
+                seasonal variation, with substantially colder winter
+                temperatures and warmer summer conditions.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ===================================================== -->
+    <!-- 6. DATA VISUALIZATION -->
+    <!-- ===================================================== -->
+
+    <section>
+
+        <h2>6. Data Visualization</h2>
+
+
+        <!-- Figure 1 -->
+
+        <div class="figure">
+
+            <img src="monthly-average-temperature.png"
+                 alt="Monthly Average Temperature">
+
+            <div class="caption">
+                Figure 1 — Monthly Average Temperature
+            </div>
+
+        </div>
+
+        <div class="highlight">
+
+            <strong>Figure 1 — Monthly Temperature</strong>
+
+            <p>
+                The monthly average temperature illustrates the strong
+                seasonal difference between Honolulu and Anchorage.
+                Honolulu remains comparatively stable, whereas Anchorage
+                experiences pronounced seasonal changes.
+            </p>
+
+        </div>
+
+
+        <!-- Figure 2 -->
+
+        <div class="figure">
+
+            <img src="temperature-comparison.png"
+                 alt="Temperature Comparison Between Stations">
+
+            <div class="caption">
+                Figure 2 — Temperature Comparison Between Stations
+            </div>
+
+        </div>
+
+        <div class="highlight">
+
+            <strong>Figure 2 — Temperature Comparison</strong>
+
+            <p>
+                The temperature distributions of the two stations show
+                the climatic differences between the locations.
+                Anchorage has a much wider temperature range than
+                Honolulu.
+            </p>
+
+        </div>
+
+
+        <!-- Figure 3 -->
+
+        <div class="figure">
+
+            <img src="temperature-distribution.png"
+                 alt="Temperature Distribution">
+
+            <div class="caption">
+                Figure 3 — Temperature Distribution
+            </div>
+
+        </div>
+
+        <div class="highlight">
+
+            <strong>Figure 3 — Temperature Distribution</strong>
+
+            <p>
+                The histogram demonstrates how temperature observations
+                are distributed throughout the dataset. Honolulu has a
+                more concentrated distribution, while Anchorage covers
+                a broader range of temperatures.
+            </p>
+
+        </div>
+
+
+        <!-- Figure 4 -->
+
+        <div class="figure">
+
+            <img src="humidity-vs-temperature.png"
+                 alt="Humidity vs Temperature">
+
+            <div class="caption">
+                Figure 4 — Humidity vs Temperature
+            </div>
+
+        </div>
+
+        <div class="highlight">
+
+            <strong>Figure 4 — Humidity and Temperature</strong>
+
+            <p>
+                The scatter plot shows the relationship between relative
+                humidity and temperature. The overall relationship is
+                negative, indicating that higher temperatures are
+                generally associated with lower relative humidity in
+                this dataset.
+            </p>
+
+        </div>
+
+
+        <!-- Figure 5 -->
+
+        <div class="figure">
+
+            <img src="correlation-heatmap.png"
+                 alt="Correlation Heatmap">
+
+            <div class="caption">
+                Figure 5 — Correlation Heatmap
+            </div>
+
+        </div>
+
+        <div class="highlight">
+
+            <strong>Figure 5 — Correlation Analysis</strong>
+
+            <p>
+                The correlation matrix provides a numerical overview of
+                the relationships between the selected weather
+                variables. Temperature and relative humidity show a
+                negative correlation of approximately -0.34, while wind
+                speed and relative humidity show a stronger negative
+                relationship of approximately -0.52.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ===================================================== -->
+    <!-- 8. TOOLS & TECHNOLOGIES -->
+    <!-- ===================================================== -->
+
+    <section>
+
+        <h2>8. Tools &amp; Technologies</h2>
+
+        <ul>
+
+            <li>
+                <strong>Python</strong> — Main programming language
+            </li>
+
+            <li>
+                <strong>Pandas</strong> — Data loading, cleaning,
+                transformation, and analysis
+            </li>
+
+            <li>
+                <strong>NumPy</strong> — Numerical operations
+            </li>
+
+            <li>
+                <strong>Matplotlib</strong> — Data visualization
+            </li>
+
+            <li>
+                <strong>Seaborn</strong> — Statistical visualization
+            </li>
+
+            <li>
+                <strong>Google Colab</strong> — Development environment
+            </li>
+
+            <li>
+                <strong>NOAA</strong> — Meteorological data source
+            </li>
+
+        </ul>
+
+    </section>
+
+
+    <!-- ===================================================== -->
+    <!-- 9. REFERENCES -->
+    <!-- ===================================================== -->
+
+    <section>
+
+        <h2>9. References</h2>
+
+        <div class="reference-list">
+
+            <ul>
+
+                <li>
+                    NOAA Local Climatological Data —
+                    2024 weather observations
+                </li>
+
+                <li>
+                    Python documentation and scientific computing
+                    libraries used throughout the project
+                </li>
+
+                <li>
+                    Pandas documentation
+                </li>
+
+                <li>
+                    NumPy documentation
+                </li>
+
+                <li>
+                    Matplotlib documentation
+                </li>
+
+                <li>
+                    Seaborn documentation
+                </li>
+
+            </ul>
+
+        </div>
+
+    </section>
+
+
+    <!-- ===================================================== -->
+    <!-- 7. PYTHON SOURCE CODE -->
+    <!-- ===================================================== -->
+
+    <section>
+
+        <h2>7. Python Source Code</h2>
+
+        <div class="source-box">
+
+            <h3>Complete Analysis Script</h3>
+
+            <p>
+                The complete Python implementation used for the
+                numerical analysis is available below.
+            </p>
+
+            <p>
+                The script contains the data loading, preparation,
+                statistical analysis, interpolation, visualization,
+                and output procedures.
+            </p>
+
+            <a class="source-link"
+               href="weather_analysis.py">
                 View weather_analysis.py →
             </a>
-        </p>
-    </div>
 
-    <details>
-        <summary>Figure 1 — Monthly Average Temperature</summary>
+        </div>
 
-        <pre><code>monthly_temp = (
-    weather.groupby(["Month", "Station"])
-    ["HourlyDryBulbTemperature"]
+
+        <!-- Data Loading -->
+
+        <details>
+
+            <summary>
+                Data Loading &amp; Preparation
+            </summary>
+
+            <pre><code>
+import pandas as pd
+import numpy as np
+
+hawaii = pd.read_csv(
+    "Hawaii_Honolulu_2024.csv",
+    low_memory=False
+)
+
+alaska = pd.read_csv(
+    "Alaska_Anchorage_2024.csv",
+    low_memory=False
+)
+
+hawaii.columns = hawaii.columns.str.strip()
+alaska.columns = alaska.columns.str.strip()
+
+selected_columns = [
+    "DATE",
+    "HourlyDryBulbTemperature",
+    "HourlyRelativeHumidity",
+    "HourlyWindSpeed",
+    "HourlyPrecipitation",
+    "HourlySeaLevelPressure"
+]
+
+hawaii_selected = hawaii[selected_columns].copy()
+alaska_selected = alaska[selected_columns].copy()
+
+hawaii_selected["Station"] = "Honolulu"
+alaska_selected["Station"] = "Anchorage"
+
+combined_df = pd.concat(
+    [hawaii_selected, alaska_selected],
+    ignore_index=True
+)
+            </code></pre>
+
+        </details>
+
+
+        <!-- Numeric Conversion -->
+
+        <details>
+
+            <summary>
+                Numerical Conversion
+            </summary>
+
+            <pre><code>
+numeric_columns = [
+    "HourlyDryBulbTemperature",
+    "HourlyRelativeHumidity",
+    "HourlyWindSpeed",
+    "HourlyPrecipitation",
+    "HourlySeaLevelPressure"
+]
+
+for col in numeric_columns:
+    combined_df[col] = pd.to_numeric(
+        combined_df[col],
+        errors="coerce"
+    )
+            </code></pre>
+
+        </details>
+
+
+        <!-- Figure 1 -->
+
+        <details>
+
+            <summary>
+                Figure 1 — Monthly Average Temperature
+            </summary>
+
+            <pre><code>
+monthly_temp = (
+    weather
+    .groupby(
+        ["Month", "Station"]
+    )["HourlyDryBulbTemperature"]
     .mean()
     .reset_index()
 )
@@ -497,13 +872,23 @@ sns.lineplot(
 plt.title("Monthly Average Temperature")
 plt.xlabel("Month")
 plt.ylabel("Temperature")
-plt.show()</code></pre>
-    </details>
 
-    <details>
-        <summary>Figure 2 — Temperature Comparison</summary>
+plt.show()
+            </code></pre>
 
-        <pre><code>plt.figure(figsize=(10, 6))
+        </details>
+
+
+        <!-- Figure 2 -->
+
+        <details>
+
+            <summary>
+                Figure 2 — Temperature Comparison
+            </summary>
+
+            <pre><code>
+plt.figure(figsize=(10, 6))
 
 sns.boxplot(
     data=weather,
@@ -511,16 +896,29 @@ sns.boxplot(
     y="HourlyDryBulbTemperature"
 )
 
-plt.title("Temperature Comparison Between Stations")
+plt.title(
+    "Temperature Comparison Between Stations"
+)
+
 plt.xlabel("Station")
 plt.ylabel("Temperature")
-plt.show()</code></pre>
-    </details>
 
-    <details>
-        <summary>Figure 3 — Temperature Distribution</summary>
+plt.show()
+            </code></pre>
 
-        <pre><code>plt.figure(figsize=(10, 6))
+        </details>
+
+
+        <!-- Figure 3 -->
+
+        <details>
+
+            <summary>
+                Figure 3 — Temperature Distribution
+            </summary>
+
+            <pre><code>
+plt.figure(figsize=(10, 6))
 
 sns.histplot(
     data=weather,
@@ -533,13 +931,23 @@ sns.histplot(
 plt.title("Temperature Distribution")
 plt.xlabel("Temperature")
 plt.ylabel("Frequency")
-plt.show()</code></pre>
-    </details>
 
-    <details>
-        <summary>Figure 4 — Humidity vs Temperature</summary>
+plt.show()
+            </code></pre>
 
-        <pre><code>plt.figure(figsize=(10, 6))
+        </details>
+
+
+        <!-- Figure 4 -->
+
+        <details>
+
+            <summary>
+                Figure 4 — Humidity vs Temperature
+            </summary>
+
+            <pre><code>
+plt.figure(figsize=(10, 6))
 
 sns.scatterplot(
     data=weather,
@@ -552,13 +960,25 @@ sns.scatterplot(
 plt.title("Humidity vs Temperature")
 plt.xlabel("Relative Humidity")
 plt.ylabel("Temperature")
-plt.show()</code></pre>
-    </details>
 
-    <details>
-        <summary>Figure 5 — Correlation Heatmap</summary>
+plt.show()
+            </code></pre>
 
-        <pre><code>correlation = weather[NUMERIC_COLUMNS].corr()
+        </details>
+
+
+        <!-- Figure 5 -->
+
+        <details>
+
+            <summary>
+                Figure 5 — Correlation Heatmap
+            </summary>
+
+            <pre><code>
+correlation = weather[numeric_columns].corr()
+
+display(correlation)
 
 plt.figure(figsize=(8, 6))
 
@@ -569,165 +989,175 @@ sns.heatmap(
 )
 
 plt.title("Correlation Heatmap")
-plt.show()</code></pre>
-    </details>
 
-    <details>
-        <summary>Figure 6 — Original vs Interpolated Temperature</summary>
+plt.show()
+            </code></pre>
 
-        <pre><code>original_temperature = (
-    weather["HourlyDryBulbTemperature"].copy()
+        </details>
+
+
+        <!-- Figure 6 -->
+
+        <details>
+
+            <summary>
+                Figure 6 — Original vs Interpolated Data
+            </summary>
+
+            <pre><code>
+original_temperature = (
+    combined_df[
+        "HourlyDryBulbTemperature"
+    ].copy()
 )
 
-interpolated_weather = weather.copy()
-
-interpolated_weather[NUMERIC_COLUMNS] = (
-    interpolated_weather
-    .groupby("Station")[NUMERIC_COLUMNS]
-    .transform(
-        lambda group:
-        group.interpolate(method="linear")
-    )
+weather[numeric_columns] = (
+    weather[numeric_columns]
+    .interpolate(method="linear")
 )
 
 plt.figure(figsize=(12, 6))
 
-
-    <section>
-        <h2>Interpolation Analysis</h2>
-
-        <p>
-            Linear interpolation was used to estimate missing temperature
-            observations from neighboring measurements. The interpolated
-            values closely followed the original temperature series,
-            demonstrating that the method was effective for filling
-            short gaps in the time series.
-        </p>
-
-   <div class="figure">
-    <img src="original-vs-interpolated-temperature.png"
-         alt="Original vs Interpolated Temperature Data">
-    <p class="caption">
-        Figure 6. Original and interpolated temperature data.
-    </p>
-  </div>
-
-        <div class="highlight">
-            <h3>Original vs. Interpolated Temperature</h3>
-
-            <p>
-                The graph compares the original temperature observations
-                with the values obtained after interpolation.
-            </p>
-
-            <p>
-                <strong>Note:</strong> Linear interpolation is more
-                appropriate for continuous variables such as temperature.
-                Its application to precipitation should be interpreted
-                with caution because precipitation can change abruptly.
-            </p>
-        </div>
-    </section>
 plt.plot(
-    original_temperature.iloc[:500],
+    original_temperature[:500],
     label="Original",
     alpha=0.7
 )
 
 plt.plot(
-    interpolated_weather[
+    combined_df[
         "HourlyDryBulbTemperature"
-    ].iloc[:500],
+    ][:500],
     label="Interpolated",
     linestyle="--"
 )
 
-plt.title("Original vs Interpolated Temperature Data")
+plt.title(
+    "Original vs Interpolated Temperature Data"
+)
+
 plt.xlabel("Index")
 plt.ylabel("Temperature")
+
 plt.legend()
-plt.show()</code></pre>
-    </details>
 
-</section>
+plt.show()
+            </code></pre>
 
+        </details>
 
-    <section>
-        <h2>Discussion & Conclusion</h2>
-
-        <p>
-            This project demonstrated how numerical analysis and
-            computational tools can be applied to real-world scientific
-            datasets. Python libraries such as Pandas, NumPy, Matplotlib,
-            and Seaborn were used throughout the analysis.
-        </p>
-
-        <p>
-            The comparison between Honolulu and Anchorage revealed
-            substantial climatic differences. Honolulu displayed stable
-            warm conditions, whereas Anchorage exhibited much stronger
-            seasonal variability.
-        </p>
-
-        <p>
-            The interpolation analysis showed that linear interpolation
-            can effectively reconstruct missing values in continuous
-            weather variables such as temperature. However, the method
-            should be applied carefully to variables such as precipitation
-            where abrupt changes are common.
-        </p>
-
-        <p>
-            Overall, the project combined data cleaning, numerical
-            interpolation, statistical analysis, visualization, and
-            scientific interpretation into a single workflow.
-        </p>
     </section>
 
 
+    <!-- ===================================================== -->
+    <!-- 10. INTERPOLATION ANALYSIS -->
+    <!-- ===================================================== -->
+
     <section>
-        <h2>Tools & Technologies</h2>
+
+        <h2>10. Interpolation Analysis</h2>
+
+        <p>
+            Missing numerical values were handled using linear
+            interpolation. The purpose of interpolation was to estimate
+            missing observations while preserving the overall trend of
+            the dataset.
+        </p>
+
+        <div class="figure">
+
+            <img src="original-vs-interpolated-temperature.png"
+                 alt="Original vs Interpolated Temperature Data">
+
+            <div class="caption">
+                Figure 6 — Original vs Interpolated Temperature Data
+            </div>
+
+        </div>
 
         <div class="highlight">
-            <ul>
-                <li><strong>Python</strong> — Main programming language</li>
-                <li><strong>Pandas</strong> — Data processing and analysis</li>
-                <li><strong>NumPy</strong> — Numerical computation</li>
-                <li><strong>Matplotlib</strong> — Data visualization</li>
-                <li><strong>Seaborn</strong> — Statistical visualization</li>
-                <li><strong>Google Colab</strong> — Development environment</li>
-            </ul>
+
+            <strong>Interpolation Result</strong>
+
+            <p>
+                The interpolated values closely follow the original
+                temperature trend. The interpolation fills missing
+                observations without noticeably changing the overall
+                structure of the dataset.
+            </p>
+
         </div>
+
     </section>
 
+
+    <!-- ===================================================== -->
+    <!-- 11. DISCUSSION & CONCLUSION -->
+    <!-- ===================================================== -->
 
     <section>
-        <h2>References</h2>
 
-        <ul>
-            <li>
-                NOAA — Local Climatological Data (LCD)
-            </li>
-            <li>
-                National Centers for Environmental Information (NCEI)
-            </li>
-            <li>
-                Numerical Analysis Course Notes,
-                Department of Physics Engineering,
-                Hacettepe University
-            </li>
-        </ul>
+        <h2>11. Discussion &amp; Conclusion</h2>
+
+        <p>
+            The analysis demonstrates how numerical analysis and
+            statistical techniques can be applied to real-world
+            meteorological data.
+        </p>
+
+        <p>
+            The comparison between Honolulu and Anchorage clearly
+            demonstrates the effect of geographical location and
+            seasonal variation on temperature patterns.
+        </p>
+
+        <p>
+            Honolulu maintained relatively stable temperatures throughout
+            the year, while Anchorage showed significantly stronger
+            seasonal variation.
+        </p>
+
+        <p>
+            The correlation analysis also revealed meaningful
+            relationships between temperature, humidity, wind speed,
+            precipitation, and sea level pressure.
+        </p>
+
+        <p>
+            Linear interpolation provided a practical method for
+            handling missing numerical observations while preserving
+            the general structure of the dataset.
+        </p>
+
+        <div class="highlight">
+
+            <strong>Final Conclusion</strong>
+
+            <p>
+                This project demonstrates a complete scientific data
+                analysis workflow, from raw NOAA data processing to
+                numerical analysis, interpolation, statistical
+                evaluation, and visualization using Python.
+            </p>
+
+        </div>
+
     </section>
 
 
-    <footer>
-        Numerical Analysis Project · Hacettepe University · Physics Engineering
-    </footer>
+    <!-- ===================================================== -->
+    <!-- 12. BACK TO PROJECTS -->
+    <!-- ===================================================== -->
+
+    <div class="back">
+
+        <a href="../index.html">
+            ← Back to Projects
+        </a>
+
+    </div>
 
 </div>
 
 </body>
 </html>
-
-
-
