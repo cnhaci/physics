@@ -446,44 +446,7 @@
             View Python Source Code →
         </a>
 
-        <h3>Main Data Selection</h3>
-
-        <pre><code>selected_columns = [
-    "DATE",
-    "HourlyDryBulbTemperature",
-    "HourlyRelativeHumidity",
-    "HourlyWindSpeed",
-    "HourlyPrecipitation",
-    "HourlySeaLevelPressure"
-]
-
-hawaii_selected = hawaii[selected_columns].copy()
-alaska_selected = alaska[selected_columns].copy()
-
-hawaii_selected["Station"] = "Honolulu"
-alaska_selected["Station"] = "Anchorage"
-
-combined_df = pd.concat(
-    [hawaii_selected, alaska_selected],
-    ignore_index=True
-)</code></pre>
-
-        <h3>Numerical Conversion</h3>
-
-        <pre><code>numeric_columns = [
-    "HourlyDryBulbTemperature",
-    "HourlyRelativeHumidity",
-    "HourlyWindSpeed",
-    "HourlyPrecipitation",
-    "HourlySeaLevelPressure"
-]
-
-for col in numeric_columns:
-    weather[col] = pd.to_numeric(
-        weather[col],
-        errors="coerce"
-    )</code></pre>
-    </section>
+      
 
 
     <!-- 10 -->
