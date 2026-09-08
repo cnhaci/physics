@@ -592,28 +592,6 @@ interpolated_weather[NUMERIC_COLUMNS] = (
 
 plt.figure(figsize=(12, 6))
 
-plt.plot(
-    original_temperature.iloc[:500],
-    label="Original",
-    alpha=0.7
-)
-
-plt.plot(
-    interpolated_weather[
-        "HourlyDryBulbTemperature"
-    ].iloc[:500],
-    label="Interpolated",
-    linestyle="--"
-)
-
-plt.title("Original vs Interpolated Temperature Data")
-plt.xlabel("Index")
-plt.ylabel("Temperature")
-plt.legend()
-plt.show()</code></pre>
-    </details>
-
-</section>
 
     <section>
         <h2>Interpolation Analysis</h2>
@@ -650,6 +628,28 @@ plt.show()</code></pre>
             </p>
         </div>
     </section>
+plt.plot(
+    original_temperature.iloc[:500],
+    label="Original",
+    alpha=0.7
+)
+
+plt.plot(
+    interpolated_weather[
+        "HourlyDryBulbTemperature"
+    ].iloc[:500],
+    label="Interpolated",
+    linestyle="--"
+)
+
+plt.title("Original vs Interpolated Temperature Data")
+plt.xlabel("Index")
+plt.ylabel("Temperature")
+plt.legend()
+plt.show()</code></pre>
+    </details>
+
+</section>
 
 
     <section>
