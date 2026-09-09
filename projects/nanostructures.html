@@ -1,24 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Light–Matter Interactions in Nanostructures</title>
 
     <style>
+
         body {
             margin: 0;
             font-family: Arial, sans-serif;
             background: #0b0b0b;
             color: #f2f2f2;
-            line-height: 1.7;
+            line-height: 1.8;
         }
 
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: auto;
-            padding: 60px 25px;
+            padding: 60px 30px;
         }
 
         a {
@@ -27,176 +30,360 @@
         }
 
         .back {
-            margin-bottom: 50px;
             display: inline-block;
-            opacity: 0.7;
+            margin-bottom: 60px;
+            color: #c7d7ff;
         }
 
         .back:hover {
-            opacity: 1;
-        }
-
-        .label {
-            font-size: 13px;
-            letter-spacing: 3px;
-            opacity: 0.5;
+            text-decoration: underline;
         }
 
         h1 {
             font-size: 42px;
-            margin: 15px 0 25px;
+            line-height: 1.2;
+            margin-bottom: 25px;
         }
 
         h2 {
-            margin-top: 60px;
-            font-size: 24px;
+            font-size: 27px;
+            margin-top: 70px;
+            margin-bottom: 25px;
+        }
+
+        h3 {
+            font-size: 20px;
+            margin-top: 35px;
+        }
+
+        p {
+            font-size: 16px;
+            margin-bottom: 25px;
         }
 
         .intro {
             font-size: 19px;
-            opacity: 0.8;
+            color: #cfd3da;
+            margin-bottom: 80px;
         }
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            margin-top: 30px;
+        .figure {
+            margin: 40px 0 55px 0;
         }
 
-        .card {
-            border: 1px solid #333;
-            padding: 25px;
-            background: #111;
+        .figure img {
+            width: 100%;
+            height: auto;
+            display: block;
+            background: #ffffff;
         }
 
-        .card h3 {
-            margin-top: 0;
+        .caption {
+            margin-top: 14px;
+            font-size: 14px;
+            color: #9da3ad;
         }
 
         .result {
-            border-left: 2px solid #777;
-            padding-left: 20px;
-            margin-top: 30px;
-            opacity: 0.85;
+            margin-top: 35px;
+            padding-left: 22px;
+            border-left: 2px solid #555;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-top: 50px;
+            padding: 12px 18px;
+            border: 1px solid #333;
+            font-size: 16px;
+        }
+
+        .back-button:hover {
+            border-color: #777;
         }
 
         footer {
-            margin-top: 100px;
-            padding-top: 25px;
-            border-top: 1px solid #333;
-            opacity: 0.5;
+            margin-top: 90px;
+            padding-top: 30px;
+            border-top: 1px solid #292929;
+            color: #777;
             font-size: 14px;
         }
 
-        @media (max-width: 600px) {
+        .course {
+            color: #9aa4b2;
+            margin-bottom: 30px;
+        }
+
+        @media (max-width: 700px) {
+
+            .container {
+                padding: 40px 20px;
+            }
+
             h1 {
                 font-size: 32px;
             }
 
-            .grid {
-                grid-template-columns: 1fr;
+            h2 {
+                font-size: 24px;
             }
+
+            .intro {
+                font-size: 17px;
+            }
+
+            p {
+                font-size: 15px;
+            }
+
         }
+
     </style>
+
 </head>
+
 
 <body>
 
+
 <div class="container">
 
-    <a class="back" href="../index.html">← Back to Projects</a>
 
-  
+    <!-- BACK -->
 
-    <h1>Light–Matter Interactions in Nanostructures</h1>
+    <a class="back" href="../index.html">
+        ← Back to Projects
+    </a>
+
+
+    <!-- TITLE -->
+
+    <h1>
+        Light–Matter Interactions in Nanostructures
+    </h1>
+
 
     <p class="intro">
-        A computational study of light–matter interactions in a nanoscale
-        system, focusing on resonance behaviour and surface charge distribution.
+        A computational study of plasmonic interactions in silver
+        nanoparticle systems, focusing on three-dimensional particle
+        geometry, scattering spectra, extinction spectra, and resonance behaviour.
     </p>
 
-    <h2>Project Overview</h2>
+
+
+    <!-- 1. INTRODUCTION -->
+
+    <h2>
+        1. Introduction
+    </h2>
 
     <p>
-        This project investigates the interaction between light and a
-        nanostructured system through numerical simulations. The study
-        focuses on resonance behaviour, surface charge distribution,
-        and the simulation of a gold nanoparticle sphere.
+        Nanostructures provide a useful framework for studying the
+        interaction between electromagnetic radiation and matter at
+        the nanoscale.
     </p>
 
-    <h2>Project Focus</h2>
+    <p>
+        In this project, numerical simulations were used to investigate
+        the optical response of silver nanoparticle systems. The study
+        focuses on the geometry of interacting nanoparticles and their
+        wavelength-dependent scattering and extinction responses.
+    </p>
 
-    <div class="grid">
 
-        <div class="card">
-            <h3>Resonance</h3>
-            <p>
-                Investigation of the surface charge distribution at a
-                resonance wavelength of 530 nm.
-            </p>
-        </div>
 
-        <div class="card">
-            <h3>Surface Charge</h3>
-            <p>
-                Numerical visualization of the surface charge distribution
-                during resonance.
-            </p>
-        </div>
+    <!-- 2. PROJECT OVERVIEW -->
 
-        <div class="card">
-            <h3>Gold Nanoparticle</h3>
-            <p>
-                Simulation of a spherical gold nanoparticle and its
-                numerical representation.
-            </p>
-        </div>
+    <h2>
+        2. Project Overview
+    </h2>
 
-        <div class="card">
-            <h3>Numerical Model</h3>
-            <p>
-                The nanoparticle sphere is represented using a triangular
-                discretization consisting of 796 triangles.
-            </p>
+    <p>
+        The project consists of three main computational results.
+        First, a three-dimensional surface mesh representation of two
+        silver nanoparticles was examined.
+    </p>
+
+    <p>
+        The scattering spectrum of the two-particle system was then
+        analysed as a function of wavelength. Finally, the extinction
+        spectrum of a single silver nanosphere with a diameter of
+        100 nm was investigated.
+    </p>
+
+
+
+    <!-- 3. NANOPARTICLE GEOMETRY -->
+
+    <h2>
+        3. Nanoparticle Geometry
+    </h2>
+
+    <p>
+        The following simulation shows the three-dimensional surface
+        mesh representation of two silver nanoparticles positioned
+        with a defined separation.
+    </p>
+
+
+    <div class="figure">
+
+        <img
+            src="silver-nanoparticle-pair.png"
+            alt="Three-dimensional surface mesh of two silver nanoparticles"
+        >
+
+        <div class="caption">
+            Figure 1. Three-dimensional surface mesh representation
+            of two silver nanoparticles.
         </div>
 
     </div>
 
-    <h2>Results</h2>
+
+
+    <!-- 4. SCATTERING SPECTRUM -->
+
+    <h2>
+        4. Scattering Spectrum
+    </h2>
+
+    <p>
+        The scattering spectrum describes the wavelength-dependent
+        scattering cross section of the two-silver-nanoparticle system.
+        The spectrum shows a pronounced resonance associated with the
+        plasmonic interaction between the nanoparticles.
+    </p>
+
+
+    <div class="figure">
+
+        <img
+            src="scattering-spectrum.png"
+            alt="Scattering spectrum of two silver nanoparticles"
+        >
+
+        <div class="caption">
+            Figure 2. Scattering spectrum of the two-silver-nanoparticle
+            system. The main resonance occurs at approximately 560 nm.
+        </div>
+
+    </div>
+
+
+
+    <!-- 5. EXTINCTION SPECTRUM -->
+
+    <h2>
+        5. Extinction Spectrum
+    </h2>
+
+    <p>
+        The extinction spectrum represents the wavelength-dependent
+        extinction cross section of a single silver nanosphere,
+        including the combined contribution of absorption and scattering.
+    </p>
+
+    <p>
+        The simulated nanosphere has a diameter of 100 nm and exhibits
+        a characteristic localized surface plasmon resonance (LSPR)
+        response.
+    </p>
+
+
+    <div class="figure">
+
+        <img
+            src="extinction-spectrum.png"
+            alt="Extinction spectrum of a 100 nm silver nanosphere"
+        >
+
+        <div class="caption">
+            Figure 3. Extinction spectrum of a single silver nanosphere
+            with a diameter of 100 nm.
+        </div>
+
+    </div>
+
+
+
+    <!-- 6. DISCUSSION -->
+
+    <h2>
+        6. Discussion &amp; Conclusion
+    </h2>
 
     <div class="result">
+
         <p>
-            The simulations illustrate the surface charge distribution
-            at resonance and the numerical representation of a gold
-            nanoparticle sphere.
+            The simulations demonstrate the optical response of silver
+            nanoparticle systems through their scattering and extinction
+            spectra.
         </p>
 
         <p>
-            The simulated sphere consists of 796 triangles, using
-            the relation 2n − 4 with n = 400.
+            The two-particle scattering spectrum shows a pronounced
+            resonance at approximately 560 nm, highlighting the
+            wavelength-dependent response of the interacting nanoparticle
+            system.
         </p>
+
+        <p>
+            The extinction spectrum of the 100 nm silver nanosphere
+            provides the corresponding optical response of a single
+            nanoparticle and reveals its characteristic LSPR behaviour.
+        </p>
+
+        <p>
+            Overall, the project provides a computational representation
+            of nanoparticle geometry and demonstrates how numerical
+            simulations can be used to investigate light–matter
+            interactions at the nanoscale.
+        </p>
+
     </div>
 
- <section>
-
-        <a class="code-link" href="../index.html">
-            ← Back to Projects
-        </a>
-    </section>
 
 
-    <!-- COURSE INFORMATION -->
-    <div class="course-info">
-        Nanostructures - Hacettepe University - Department of Physics Engineering
-    </div>
+    <!-- COURSE -->
 
-    <div class="footer">
-        Hacı Can · Physics
-    </div>
+    <h2>
+        Course
+    </h2>
+
+    <p class="course">
+        Nano Structures – Light and Matter Interactions
+    </p>
+
+
+    <!-- BACK BUTTON -->
+
+    <a class="back-button" href="../index.html">
+        ← Back to Projects
+    </a>
+
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            Nano Structures - Hacettepe University -
+            Department of Physics Engineering
+        </p>
+
+        <p>
+            Haci Can · Physics
+        </p>
+
+    </footer>
+
 
 </div>
 
-</body>
-</html>
 
+</body>
+
+</html>
