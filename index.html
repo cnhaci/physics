@@ -1,239 +1,545 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Physics | Hacı Can</title>
+
+    <title>Haci Can | Physics</title>
 
     <style>
+
         * {
-            margin: 0;
-            padding: 0;
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
+            margin: 0;
+            background: #0a0a0a;
+            color: #eeeeee;
             font-family: Arial, Helvetica, sans-serif;
-            background: #0b0f14;
-            color: #e8edf2;
             line-height: 1.7;
         }
 
-        header {
-            max-width: 1000px;
-            margin: auto;
-            padding: 25px 25px 10px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        header h2 {
-            color: white;
-        }
-
-        nav a {
-            color: #aeb8c2;
+        a {
+            color: inherit;
             text-decoration: none;
-            margin-left: 20px;
         }
 
-        nav a:hover {
-            color: white;
+        .container {
+            max-width: 1050px;
+            margin: auto;
+            padding: 0 32px;
         }
+
+
+        /* NAVIGATION */
+
+        nav {
+            height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 17px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            font-size: 14px;
+            color: #888888;
+        }
+
+        .nav-links a {
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: #ffffff;
+        }
+
+
+        /* HERO */
 
         .hero {
-            max-width: 1000px;
-            margin: auto;
-            padding: 120px 25px 100px;
+            min-height: 75vh;
+            display: flex;
+            align-items: center;
+            padding: 70px 0 100px;
         }
 
-        .hero p:first-child {
-            color: #7aa2f7;
-            font-size: 18px;
-            margin-bottom: 10px;
+        .hero-content {
+            max-width: 850px;
         }
 
-        .hero h1 {
-            font-size: 56px;
-            line-height: 1.1;
-            margin-bottom: 20px;
+        .eyebrow {
+            font-size: 13px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #777777;
+            margin-bottom: 25px;
         }
 
-        .hero h1 span {
-            color: #7aa2f7;
+        h1 {
+            font-size: clamp(52px, 8vw, 92px);
+            line-height: 0.98;
+            letter-spacing: -4px;
+            margin: 0 0 35px;
+            font-weight: 600;
         }
 
-        .hero p {
-            max-width: 650px;
-            color: #aeb8c2;
-            font-size: 18px;
+        .hero-text {
+            max-width: 680px;
+            font-size: 20px;
+            color: #a8a8a8;
+            line-height: 1.7;
         }
+
+
+        /* SECTION */
 
         section {
-            max-width: 1000px;
-            margin: auto;
-            padding: 80px 25px;
+            padding: 110px 0;
+            border-top: 1px solid #202020;
         }
 
-        section h2 {
-            font-size: 32px;
+        .section-label {
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #666666;
             margin-bottom: 35px;
         }
 
-        .projects {
+
+        /* ABOUT */
+
+        .about-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
+            grid-template-columns: 1fr 2fr;
+            gap: 70px;
+        }
+
+        .about-title {
+            font-size: 30px;
+            line-height: 1.3;
+            margin: 0;
+            font-weight: 500;
+        }
+
+        .about-text {
+            font-size: 17px;
+            color: #aaaaaa;
+            max-width: 680px;
+        }
+
+
+        /* PROJECTS */
+
+        .projects {
+            display: flex;
+            flex-direction: column;
         }
 
         .project {
-            background: #121821;
-            border: 1px solid #202a36;
-            border-radius: 12px;
-            padding: 25px;
-            transition: 0.2s;
+            display: grid;
+            grid-template-columns: 90px 1fr auto;
+            align-items: center;
+            gap: 35px;
+            padding: 35px 0;
+            border-bottom: 1px solid #202020;
+            transition: padding 0.25s ease;
+        }
+
+        .project:first-child {
+            border-top: 1px solid #202020;
         }
 
         .project:hover {
-            transform: translateY(-4px);
-            border-color: #7aa2f7;
+            padding-left: 12px;
         }
 
-        .project h3 {
-            margin-bottom: 10px;
+        .project-number {
+            font-size: 13px;
+            color: #666666;
+            letter-spacing: 2px;
         }
 
-        .project p {
-            color: #aeb8c2;
-            margin-bottom: 15px;
+        .project-info h3 {
+            margin: 0 0 8px;
+            font-size: 22px;
+            font-weight: 500;
         }
 
-        .project a {
-            color: #7aa2f7;
-            text-decoration: none;
+        .project-info p {
+            margin: 0;
+            color: #888888;
+            font-size: 15px;
+            max-width: 650px;
         }
 
-        .about {
-            color: #aeb8c2;
-            max-width: 700px;
+        .project-link {
+            font-size: 14px;
+            color: #aaaaaa;
+            white-space: nowrap;
         }
+
+        .project:hover .project-link {
+            color: #ffffff;
+        }
+
+
+        /* INTERESTS */
+
+        .interests {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .interest {
+            border: 1px solid #292929;
+            padding: 10px 17px;
+            color: #999999;
+            font-size: 14px;
+            transition: border-color 0.2s ease,
+                        color 0.2s ease;
+        }
+
+        .interest:hover {
+            border-color: #555555;
+            color: #ffffff;
+        }
+
+
+        /* FOOTER */
 
         footer {
-            text-align: center;
-            padding: 50px 25px;
-            border-top: 1px solid #202a36;
-            color: #6f7b87;
+            padding: 45px 0 55px;
+            border-top: 1px solid #202020;
+            color: #555555;
+            font-size: 13px;
         }
 
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+
+        /* MOBILE */
+
         @media (max-width: 700px) {
-            header {
-                flex-direction: column;
-                gap: 15px;
+
+            .container {
+                padding: 0 22px;
             }
 
-            nav a {
-                margin: 0 8px;
+            nav {
+                height: 75px;
+            }
+
+            .nav-links {
+                gap: 15px;
+                font-size: 13px;
             }
 
             .hero {
-                padding-top: 80px;
+                min-height: 70vh;
+                padding: 50px 0 80px;
             }
 
-            .hero h1 {
-                font-size: 42px;
+            h1 {
+                font-size: 52px;
+                letter-spacing: -2px;
             }
+
+            .hero-text {
+                font-size: 17px;
+            }
+
+            section {
+                padding: 80px 0;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .project {
+                grid-template-columns: 55px 1fr;
+                gap: 20px;
+            }
+
+            .project-link {
+                grid-column: 2;
+                margin-top: 5px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+            }
+
         }
+
     </style>
+
 </head>
+
 
 <body>
 
-<header>
-    <h2>Hacı Can</h2>
+
+<div class="container">
+
+
+    <!-- NAVIGATION -->
 
     <nav>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#interests">Interests</a>
+
+        <div class="logo">
+            HC
+        </div>
+
+        <div class="nav-links">
+
+            <a href="#about">
+                About
+            </a>
+
+            <a href="#projects">
+                Projects
+            </a>
+
+            <a href="#interests">
+                Interests
+            </a>
+
+        </div>
+
     </nav>
-</header>
 
 
-<main>
 
+    <!-- HERO -->
+
+    <header class="hero">
+
+        <div class="hero-content">
+
+            <div class="eyebrow">
+                Physics Engineering · Hacettepe University
+            </div>
+
+            <h1>
+                Hacı Can
+            </h1>
+
+            <p class="hero-text">
+                Physics engineering student.
+            </p>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ABOUT -->
 
     <section id="about">
-        <h2>About</h2>
 
-        <div class="about">
-            <p>
-                
-           I am a Physics Engineering student at Hacettepe University, interested in physics, mathematics, computation, and experimentation. I work on physics projects, data analysis, and numerical modelling while exploring the role of programming in scientific research.
-
-
-            </p>
-
-            <br>
-
-            <p>
-            
-            </p>
+        <div class="section-label">
+            01 / About
         </div>
+
+        <div class="about-grid">
+
+            <h2 class="about-title">
+                Physics, computation<br>
+                &amp; scientific thinking.
+            </h2>
+
+            <div class="about-text">
+
+                <p>
+                    I am a Physics Engineering student at
+                    Hacettepe University, interested in understanding
+                    physical systems through mathematical modelling,
+                    numerical methods, and experimentation.
+                </p>
+
+                <p>
+                    My work focuses on computational physics,
+                    data analysis, scientific programming, and
+                    the application of computational tools to
+                    physical problems.
+                </p>
+
+            </div>
+
+        </div>
+
     </section>
 
 
+
+    <!-- PROJECTS -->
+
     <section id="projects">
-        <h2>Projects</h2>
+
+        <div class="section-label">
+            02 / Selected Projects
+        </div>
 
         <div class="projects">
 
+
+            <!-- PROJECT 01 -->
+
             <div class="project">
-                <h3>Nanostructures</h3>
 
-                <p>
-                   A computational study of light–matter interactions in a nanoscale system, focusing on resonance behaviour and surface charge distribution.
-                </p>
+                <div class="project-number">
+                    01
+                </div>
 
-                <a href="projects/nanostructures.html">View project →</a>
+                <div class="project-info">
+
+                    <h3>
+                        Light–Matter Interactions in Nanostructures
+                    </h3>
+
+                    <p>
+                        Computational investigation of plasmonic
+                        interactions in silver nanoparticle systems,
+                        including scattering and extinction spectra.
+                    </p>
+
+                </div>
+
+                <a
+                    class="project-link"
+                    href="projects/nanostructures.html"
+                >
+                    View project →
+                </a>
+
             </div>
 
 
-           <div class="project">
-    <h3>Data Analysis</h3>
 
-<p>
-    Numerical analysis of 2024 NOAA weather data
-    using Python, interpolation, statistical analysis,
-    and data visualization.
-</p>
+            <!-- PROJECT 02 -->
 
-<a href="projects/numerical-analysis.html">View project →</a>
+            <div class="project">
+
+                <div class="project-number">
+                    02
+                </div>
+
+                <div class="project-info">
+
+                    <h3>
+                        Numerical Analysis of NOAA Weather Data
+                    </h3>
+
+                    <p>
+                        Numerical and statistical analysis of
+                        meteorological data using Python,
+                        visualization, and data-processing methods.
+                    </p>
+
+                </div>
+
+                <a
+                    class="project-link"
+                    href="projects/numerical-analysis.html"
+                >
+                    View project →
+                </a>
+
+            </div>
+
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- INTERESTS -->
+
+    <section id="interests">
+
+        <div class="section-label">
+            03 / Research Interests
+        </div>
+
+        <div class="interests">
+
+            <div class="interest">
+                Computational Physics
+            </div>
+
+            <div class="interest">
+                Nanotechnology
+            </div>
+
+            <div class="interest">
+                Numerical Methods
+            </div>
+
+            <div class="interest">
+                Data Analysis
+            </div>
+
+            <div class="interest">
+                Mathematical Modelling
+            </div>
+
+            <div class="interest">
+                Scientific Programming
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-content">
+
+            <div>
+                © 2026 Hacı Can
+            </div>
+
+            <div>
+                Physics Engineering · Hacettepe University
+            </div>
+
+        </div>
+
+    </footer>
+
+
 </div>
 
 
-
-    </section>
-
-
-    <section id="interests">
-        <h2>Research Interests</h2>
-
-        <div class="about">
-            <p>
-                Computational Physics · Numerical Methods ·
-                Data Analysis · Mathematical Modelling ·
-                Scientific Programming
-            </p>
-        </div>
-    </section>
-
-</main>
-
-
-<footer>
-    © 2026 Hacı Can · Physics
-</footer>
-
 </body>
+
 </html>
