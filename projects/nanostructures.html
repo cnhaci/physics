@@ -51,11 +51,6 @@
             margin-bottom: 25px;
         }
 
-        h3 {
-            font-size: 20px;
-            margin-top: 35px;
-        }
-
         p {
             font-size: 16px;
             margin-bottom: 25px;
@@ -68,7 +63,7 @@
         }
 
         .figure {
-            margin: 40px 0 55px 0;
+            margin: 40px 0 60px 0;
         }
 
         .figure img {
@@ -110,9 +105,12 @@
             font-size: 14px;
         }
 
+        footer p {
+            margin-bottom: 8px;
+        }
+
         .course {
             color: #9aa4b2;
-            margin-bottom: 30px;
         }
 
         @media (max-width: 700px) {
@@ -146,11 +144,10 @@
 
 <body>
 
-
 <div class="container">
 
 
-    <!-- BACK -->
+    <!-- BACK TO PROJECTS -->
 
     <a class="back" href="../index.html">
         ← Back to Projects
@@ -166,8 +163,8 @@
 
     <p class="intro">
         A computational study of plasmonic interactions in silver
-        nanoparticle systems, focusing on three-dimensional particle
-        geometry, scattering spectra, extinction spectra, and resonance behaviour.
+        nanoparticle systems, focusing on nanoparticle geometry,
+        scattering spectra, extinction spectra, and resonance behaviour.
     </p>
 
 
@@ -179,16 +176,16 @@
     </h2>
 
     <p>
-        Nanostructures provide a useful framework for studying the
-        interaction between electromagnetic radiation and matter at
-        the nanoscale.
+        Nanostructures provide a framework for investigating the
+        interaction between electromagnetic radiation and matter
+        at the nanoscale.
     </p>
 
     <p>
-        In this project, numerical simulations were used to investigate
-        the optical response of silver nanoparticle systems. The study
-        focuses on the geometry of interacting nanoparticles and their
-        wavelength-dependent scattering and extinction responses.
+        In this project, numerical simulations were used to study
+        the optical response of silver nanoparticle systems.
+        The analysis focuses on nanoparticle geometry, scattering
+        behaviour, extinction, and plasmonic resonance.
     </p>
 
 
@@ -200,16 +197,16 @@
     </h2>
 
     <p>
-        The project consists of three main computational results.
-        First, a three-dimensional surface mesh representation of two
-        silver nanoparticles was examined.
+        The project examines two different nanoparticle configurations.
+        First, a three-dimensional surface mesh representation of
+        two silver nanoparticles separated by a defined gap is presented.
     </p>
 
     <p>
-        The scattering spectrum of the two-particle system was then
-        analysed as a function of wavelength. Finally, the extinction
-        spectrum of a single silver nanosphere with a diameter of
-        100 nm was investigated.
+        The optical response of the two-particle system is then
+        investigated through its wavelength-dependent scattering
+        spectrum. Finally, the extinction spectrum of a single
+        silver nanosphere with a diameter of 100 nm is examined.
     </p>
 
 
@@ -217,94 +214,104 @@
     <!-- 3. NANOPARTICLE GEOMETRY -->
 
     <h2>
-    3. Nanoparticle Geometry
-</h2>
+        3. Nanoparticle Geometry
+    </h2>
 
-<p>
-    The following simulation shows the three-dimensional surface
-    mesh representation of two silver nanoparticles positioned
-    with a defined separation.
-</p>
+    <p>
+        The following simulation shows the three-dimensional surface
+        mesh representation of two silver nanoparticles positioned
+        with a defined separation.
+    </p>
 
-<div class="figure">
 
-    <img
-        src="silver-nanoparticle-pair.png"
-        alt="Three-dimensional surface mesh of two silver nanoparticles"
-    >
+    <div class="figure">
 
-    <div class="caption">
-        Figure 1. Three-dimensional surface mesh representation
-        of two silver nanoparticles.
+        <img
+            src="silver-nanoparticle-pair.png"
+            alt="Three-dimensional surface mesh representation of two silver nanoparticles"
+        >
+
+        <div class="caption">
+            Figure 1. Three-dimensional surface mesh representation
+            of two silver nanoparticles.
+        </div>
+
     </div>
 
-</div>
 
 
     <!-- 4. SCATTERING SPECTRUM -->
 
-  <h2>
-    4. Scattering Spectrum
-</h2>
+    <h2>
+        4. Scattering Spectrum
+    </h2>
 
-<p>
-    The scattering spectrum describes the wavelength-dependent
-    scattering cross section of the two-silver-nanoparticle system.
-    The spectrum reveals a pronounced resonance associated with
-    plasmonic interaction between the nanoparticles.
-</p>
+    <p>
+        The scattering spectrum describes the wavelength-dependent
+        scattering cross section of the two-silver-nanoparticle
+        system.
+    </p>
 
-<div class="figure">
+    <p>
+        The spectrum shows a pronounced resonance associated with
+        the plasmonic interaction between the two nanoparticles.
+        The main resonance occurs at approximately 560 nm.
+    </p>
 
-    <img
-        src="scattering-spectrum.png"
-        alt="Scattering spectrum of two silver nanoparticles"
-    >
 
-    <div class="caption">
-        Figure 2. Scattering spectrum of the two-silver-nanoparticle
-        system. The main resonance occurs at approximately 560 nm.
+    <div class="figure">
+
+        <img
+            src="scattering-spectrum.png"
+            alt="Scattering spectrum of two silver nanoparticles"
+        >
+
+        <div class="caption">
+            Figure 2. Wavelength-dependent scattering cross section
+            of the two-silver-nanoparticle system. The main resonance
+            occurs at approximately 560 nm.
+        </div>
+
     </div>
-
-</div>
 
 
 
     <!-- 5. EXTINCTION SPECTRUM -->
 
     <h2>
-    5. Extinction Spectrum
-</h2>
+        5. Extinction Spectrum
+    </h2>
 
-<p>
-    The extinction spectrum represents the wavelength-dependent
-    extinction cross section of a single silver nanosphere,
-    including the combined contribution of absorption and scattering.
-</p>
+    <p>
+        The extinction spectrum represents the wavelength-dependent
+        extinction cross section of a single silver nanosphere.
+    </p>
 
-<p>
-    The simulated nanosphere has a diameter of 100 nm and exhibits
-    a characteristic localized surface plasmon resonance (LSPR)
-    response.
-</p>
+    <p>
+        Extinction includes the combined contribution of absorption
+        and scattering. The simulated nanosphere has a diameter
+        of 100 nm and exhibits a characteristic localized surface
+        plasmon resonance (LSPR) response.
+    </p>
 
-<div class="figure">
 
-    <img
-        src="extinction-spectrum.png"
-        alt="Extinction spectrum of a 100 nm silver nanosphere"
-    >
+    <div class="figure">
 
-    <div class="caption">
-        Figure 3. Extinction spectrum of a single silver nanosphere
-        with a diameter of 100 nm.
+        <img
+            src="extinction-spectrum.png"
+            alt="Extinction spectrum of a 100 nm diameter silver nanosphere"
+        >
+
+        <div class="caption">
+            Figure 3. Extinction spectrum of a single silver nanosphere
+            with a diameter of 100 nm.
+        </div>
+
     </div>
 
-</div>
 
 
-
-    <!-- 6. DISCUSSION -->
+    <!-- 6. DISCUSSION AND CONCLUSION -->
 
     <h2>
         6. Discussion &amp; Conclusion
@@ -313,35 +320,35 @@
     <div class="result">
 
         <p>
-            The simulations demonstrate the optical response of silver
-            nanoparticle systems through their scattering and extinction
-            spectra.
+            The simulations demonstrate the optical response of
+            silver nanoparticle systems through their scattering
+            and extinction spectra.
         </p>
 
         <p>
-            The two-particle scattering spectrum shows a pronounced
-            resonance at approximately 560 nm, highlighting the
-            wavelength-dependent response of the interacting nanoparticle
-            system.
+            The scattering spectrum of the two-particle system
+            exhibits a pronounced resonance at approximately 560 nm,
+            demonstrating the wavelength-dependent optical response
+            associated with plasmonic interaction.
         </p>
 
         <p>
             The extinction spectrum of the 100 nm silver nanosphere
-            provides the corresponding optical response of a single
-            nanoparticle and reveals its characteristic LSPR behaviour.
+            provides the optical response of a single nanoparticle
+            and shows its characteristic LSPR behaviour.
         </p>
 
         <p>
-            Overall, the project provides a computational representation
-            of nanoparticle geometry and demonstrates how numerical
-            simulations can be used to investigate light–matter
-            interactions at the nanoscale.
+            Overall, the project demonstrates how numerical simulations
+            can be used to investigate nanoparticle geometry and
+            light–matter interactions at the nanoscale.
         </p>
 
     </div>
 
 
 
+  
 
 
     <!-- BACK BUTTON -->
@@ -369,7 +376,6 @@
 
 
 </div>
-
 
 </body>
 
