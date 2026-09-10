@@ -176,6 +176,38 @@
         }
 
 
+        /* SKILLS */
+
+        .skills-title {
+            margin-top: 35px;
+            margin-bottom: 14px;
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #666666;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skills span {
+            border: 1px solid #292929;
+            padding: 8px 14px;
+            font-size: 13px;
+            color: #888888;
+            letter-spacing: 0.3px;
+            transition: 0.2s ease;
+        }
+
+        .skills span:hover {
+            color: #ffffff;
+            border-color: #555555;
+        }
+
+
         /* PROJECTS */
 
         .projects {
@@ -412,10 +444,35 @@
 
         <div class="about-grid">
 
-            <h2 class="about-title">
-                Physics, computation<br>
-                &amp; scientific thinking.
-            </h2>
+            <div>
+
+                <h2 class="about-title">
+                    Physics, computation<br>
+                    &amp; scientific thinking.
+                </h2>
+
+                <div class="skills-title">
+                    Skills
+                </div>
+
+                <div class="skills">
+
+                    <span>
+                        Python
+                    </span>
+
+                    <span>
+                        NumPy &amp; Pandas
+                    </span>
+
+                    <span>
+                        Data Analysis &amp; Visualization
+                    </span>
+
+                </div>
+
+            </div>
+
 
             <div class="about-text">
 
